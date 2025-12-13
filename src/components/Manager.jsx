@@ -12,7 +12,7 @@ const Manager = () => {
   useEffect(() => {
     const loadPasswords = async () => {
       try {
-        const response = await fetch('http://localhost:3000/passwords');
+        const response = await fetch('https://pg-backend-7p7k.onrender.com/passwords');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         setpasswordArray(data);
@@ -43,7 +43,7 @@ const Manager = () => {
     const passwordData = { ...form, id: uuidv4() };
 
     try {
-      const response = await fetch('http://localhost:3000/passwords', {
+      const response = await fetch('https://pg-backend-7p7k.onrender.com/passwords', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(passwordData)
@@ -80,7 +80,7 @@ const Manager = () => {
     if (!confirmed) return;
 
     try {
-      const response = await fetch('http://localhost:3000/passwords', {
+      const response = await fetch('https://pg-backend-7p7k.onrender.com/passwords', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: id })
