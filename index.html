@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PassGuard</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="%BASE_URL%key.png" />
-
-    <!-- ✅ Lordicon script (MUST be here) -->
-    <script
-      src="https://cdn.lordicon.com/lordicon.js"
-      defer
-    ></script>
   </head>
 
   <body>
     <div id="root"></div>
+
+    <!-- Lordicon MUST load BEFORE React renders -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 
     <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
