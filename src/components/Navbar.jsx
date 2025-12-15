@@ -5,20 +5,24 @@ const Navbar = () => {
         <nav className="bg-[#1E212E] w-full min-h-[10vh] flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-18 py-4 md:py-0 text-white">
 
             {/* LEFT Side - Logo */}
-            <div className="flex items-center gap-4 md:gap-0">
-              <img
-  src={`${import.meta.env.BASE_URL}logo.png`}
-  alt="PassGuard Logo"
-  className="h-12 w-12 md:h-16 md:w-16 object-contain md:mx-10"
-/>
+            {/* On mobile, ensure the logo/title is left-aligned */}
+            <div className="flex items-center gap-4 w-full md:w-auto md:justify-start">
+                <img
+                    src={`${import.meta.env.BASE_URL}logo.png`}
+                    alt="PassGuard Logo"
+                    className="h-12 w-12 md:h-16 md:w-16 object-contain md:mx-10"
+                />
                 <h1 className="text-3xl md:text-4xl font-semibold text-blue-400 tracking-wide">
                     PassGuard
                 </h1>
             </div>
 
             {/* RIGHT Side - Links */}
-            {/* Mobile: Wrapped & centered. Desktop: Original layout */}
-            <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-9 mt-4 md:mt-0 md:mr-15 text-lg md:text-2xl">
+            {/* FIX: Changed justify-center (centered links) to justify-start (left-aligned links) 
+                and added w-full on mobile for better alignment below the logo.
+                Removed flex-wrap for a vertical stack of links which is cleaner on small screens.
+            */}
+            <ul className="flex flex-col items-start gap-3 w-full mt-4 md:flex-row md:items-center md:justify-end md:gap-9 md:mt-0 md:mr-15 text-lg md:text-2xl md:w-auto">
 
                 {/* Normal Links */}
                 <li>
@@ -50,7 +54,8 @@ const Navbar = () => {
 
                 {/* Icon Hover */}
                 <li className="flex items-center gap-3">
-                    <span className="text-gray-400 hidden md:block">|</span>
+                    {/* The separator is only shown in desktop view */}
+                    <span className="text-gray-400 hidden md:block">|</span> 
                     <a href="#">
                         <img 
                             src={`${import.meta.env.BASE_URL}thumb.png`}
