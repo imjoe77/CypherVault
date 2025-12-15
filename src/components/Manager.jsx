@@ -26,11 +26,11 @@ const Manager = () => {
   const showPass = () => {
     if (ref.current.src.includes("hide.png")) {
       passRef.current.type = "text"
-      ref.current.src = "view.png"
+      ref.current.src = `${import.meta.env.BASE_URL}view.png`
     }
     else {
-      ref.current.src = "hide.png"
-      passRef.current.type = "password"
+       ref.current.src = `${import.meta.env.BASE_URL}hide.png`
+       passRef.current.type = "password"
     }
   }
 
@@ -184,7 +184,7 @@ const Manager = () => {
                   />
                   {/* Eye Icon Outside */}
                   <span className="cursor-pointer shrink-0" onClick={showPass}>
-                    <img src="view.png" ref={ref} className="w-7 h-7" alt="Toggle" />
+                    <img   src={`${import.meta.env.BASE_URL}view.png`} ref={ref} className="w-7 h-7" alt="Toggle" />
                   </span>
                 </div>
               </div>

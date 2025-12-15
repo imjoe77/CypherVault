@@ -6,11 +6,11 @@ const Navbar = () => {
 
             {/* LEFT Side - Logo */}
             <div className="flex items-center gap-4 md:gap-0">
-                <img 
-                    src="/logo.png" 
-                    alt="PassGuard Logo" 
-                    className="h-12 w-12 md:h-16 md:w-16 object-contain md:mx-10" 
-                />
+              <img
+  src={`${import.meta.env.BASE_URL}logo.png`}
+  alt="PassGuard Logo"
+  className="h-12 w-12 md:h-16 md:w-16 object-contain md:mx-10"
+/>
                 <h1 className="text-3xl md:text-4xl font-semibold text-blue-400 tracking-wide">
                     PassGuard
                 </h1>
@@ -53,8 +53,8 @@ const Navbar = () => {
                     <span className="text-gray-400 hidden md:block">|</span>
                     <a href="#">
                         <img 
-                            src="/thumb.png" 
-                            alt="Thumb Icon" 
+                            src={`${import.meta.env.BASE_URL}thumb.png`}
+                            alt="Thumb Icon"
                             className="
                                 h-8 w-8 md:h-10 md:w-10 object-contain border-2 border-white rounded-full p-1 
                                 transition-all duration-300 
